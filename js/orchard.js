@@ -7,7 +7,7 @@ await initPage();
 // =====================================
 // ตั้งค่า Google Maps API Key ตรงนี้
 // =====================================
-const GOOGLE_MAPS_API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY';
+const GOOGLE_MAPS_API_KEY = 'AIzaSyABF_5oQI-HakW0DYQQQPmdkpjUmimON64';
 
 // สีประจำแปลง
 const plotColors = [
