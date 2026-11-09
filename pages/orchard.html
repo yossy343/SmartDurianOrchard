@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orchard | Smart Orchard</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    .plot-name-btn {
+      border: 0;
+      background: none;
+      color: #287a4b;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 5px 8px;
+      border-radius: 6px;
+    }
+
+    .plot-name-btn:hover,
+    .plot-name-btn.selected {
+      background: #e5f3e9;
+      text-decoration: underline;
+    }
+
+    #orchard-map {
+      width: 100%;
+      height: 480px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #f3f6f4;
+    }
+
+    .plot-detail {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .plot-detail-item {
+      background: #f5f8f6;
+      padding: 14px;
+      border-radius: 8px;
+    }
+
+    .plot-detail-item span {
+      display: block;
+      color: #78877e;
+      font-size: 13px;
+    }
+
+    .plot-detail-item strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 18px;
+    }
+
+    .map-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 14px 0;
+      font-size: 13px;
+    }
+
+    .legend-color {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    #map-message {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="app-shell">
+  <aside id="sidebar"></aside>
+
+  <main class="main-area">
+    <header id="topbar"></header>
+
+    <section class="page-content">
+
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">ORCHARD MANAGEMENT</p>
+          <h1>จัดการสวนและแปลง</h1>
+          <p class="muted">ข้อมูลสวน แปลงปลูก และขอบเขตพื้นที่</p>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <article class="stat-card">
+          <span>ชื่อสวน</span>
+          <strong class="text-value" id="orchard-name">กำลังโหลด...</strong>
+          <small id="orchard-location">-</small>
+        </article>
+
+        <article class="stat-card">
+          <span>พื้นที่รวม</span>
+          <strong id="total-area">-</strong>
+          <small>ไร่</small>
+        </article>
+
+        <article class="stat-card">
+          <span>จำนวนแปลง</span>
+          <strong id="plot-count">-</strong>
+          <small>แปลง</small>
+        </article>
+      </div>
+
+      <article class="panel">
+        <h2>รายการแปลง</h2>
+
+        <p class="muted small">
+          คลิกชื่อแปลงเพื่อแสดงขอบเขตบนแผนที่
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>แปลง</th>
+                <th>พันธุ์ทุเรียน</th>
+                <th>จำนวนต้น</th>
+                <th>พื้นที่จากการคำนวณ</th>
+              </tr>
+            </thead>
+            <tbody id="plots-table">
+              <tr>
+                <td colspan="4">กำลังโหลดข้อมูลแปลง...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>แผนที่แปลง</h2>
+
+        <div class="map-legend">
+          <span><i class="legend-color" style="background:#28a745"></i>แปลง A</span>
+          <span><i class="legend-color" style="background:#2676db"></i>แปลง B</span>
+          <span><i class="legend-color" style="background:#f39c32"></i>แปลง C</span>
+        </div>
+
+        <div id="orchard-map"></div>
+
+        <p id="map-message" class="muted">
+          กำลังเตรียมแผนที่...
+        </p>
+
+        <div id="selected-plot-detail" class="plot-detail">
+          <div class="plot-detail-item">
+            <span>แปลงที่เลือก</span>
+            <strong>-</strong>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+</div>
+
+<script type="module" src="../js/orchard.js"></script>
+</body>
+</html>

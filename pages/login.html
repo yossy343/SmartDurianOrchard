@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เข้าสู่ระบบ | Smart Orchard</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <div class="brand-mark">SO</div>
+    <p class="eyebrow">SMART FARM MANAGEMENT</p>
+    <h1>Smart Orchard</h1>
+    <p class="muted">ระบบจัดการสวนทุเรียนอัจฉริยะ</p>
+    <form id="login-form" class="form-stack">
+      <label>อีเมล<input id="email" type="email" autocomplete="username" required placeholder="name@example.com"></label>
+      <label>รหัสผ่าน<input id="password" type="password" autocomplete="current-password" required placeholder="รหัสผ่าน"></label>
+      <button class="btn btn-primary" type="submit">เข้าสู่ระบบ</button>
+      <p id="login-message" class="form-message" role="status"></p>
+    </form>
+    <p class="muted small">ใช้บัญชีผู้ดูแลสวนที่สร้างไว้ใน Supabase Authentication</p>
+  </main>
+  <script type="module" src="../js/login.js"></script>
+</body>
+</html>

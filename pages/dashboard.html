@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Smart Orchard</title>
+  <link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+  <div class="app-shell"><aside id="sidebar"></aside><main class="main-area"><header id="topbar"></header>
+    <section class="page-content">
+      <div class="page-heading"><div><p class="eyebrow">OVERVIEW</p><h1>ภาพรวมสวน</h1><p class="muted">สรุปสถานะสวนและข้อมูลล่าสุดจากระบบ</p></div><span class="status-pill">Smart Orchard</span></div>
+      <div class="stat-grid">
+        <article class="stat-card"><span>จำนวนแปลง</span><strong id="plot-count">3</strong><small>แปลงในสวน</small></article>
+        <article class="stat-card"><span>อุปกรณ์ Node</span><strong id="node-count">9</strong><small>เชื่อมต่อผ่าน Gateway 01</small></article>
+        <article class="stat-card"><span>ข้อมูลล่าสุด</span><strong id="reading-count">—</strong><small>รายการที่อ่านได้</small></article>
+        <article class="stat-card"><span>อุณหภูมิอากาศเฉลี่ย</span><strong id="avg-temp">—</strong><small>°C · ข้อมูลล่าสุดของแต่ละ Node</small></article>
+      </div>
+      <div class="content-grid">
+        <article class="panel"><div class="panel-heading"><div><h2>สถานะข้อมูล Sensor</h2><p class="muted">ค่าล่าสุดของแต่ละ Node</p></div><a href="monitoring.html">ดูทั้งหมด →</a></div>
+          <div class="table-wrap"><table><thead><tr><th>Node</th><th>ความชื้นดิน</th><th>อุณหภูมิอากาศ</th><th>ความชื้นอากาศ</th><th>เวลาบันทึก</th></tr></thead><tbody id="latest-readings"><tr><td colspan="5" class="empty">กำลังโหลดข้อมูล...</td></tr></tbody></table></div>
+        </article>
+        <article class="panel"><h2>เมนูจัดการ</h2><div class="quick-links">
+          <a href="orchard.html">🗺️ <span><b>จัดการสวน</b><small>แปลงและพื้นที่</small></span></a>
+          <a href="monitoring.html">📈 <span><b>Monitoring</b><small>ติดตาม Sensor</small></span></a>
+          <a href="water-management.html">💧 <span><b>Water Management</b><small>ระบบน้ำ</small></span></a>
+          <a href="ai-intelligence.html">✨ <span><b>AI Intelligence</b><small>วิเคราะห์ข้อมูล</small></span></a>
+        </div></article>
+      </div>
+      <p id="page-message" class="form-message" role="status"></p>
+    </section>
+  </main></div>
+  <script type="module" src="../js/dashboard.js"></script>
+</body></html>
